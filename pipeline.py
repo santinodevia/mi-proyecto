@@ -1,5 +1,5 @@
 # pipeline.py - MODIFICADO en la branch feature/agregar-iva
-
+from exportar import exportar_json
 def extraer_datos():
     """Simula extraer datos de una fuente."""
     datos = [
@@ -23,4 +23,6 @@ def calcular_total(datos, con_iva=True):
 if __name__ == "__main__":
     datos = extraer_datos()
     total = calcular_total(datos)
+    exportar_json(datos)
+    print("Datos exportados correctamente a ventas.json")
     print(f"Total de ventas (con IVA): {total:,.2f} €")
